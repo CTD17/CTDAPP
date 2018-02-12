@@ -1,13 +1,16 @@
 package com.asdsoft.app;
 
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -37,7 +40,7 @@ public class InternetCheck extends BroadcastReceiver {
         if(ni != null){
         Toast.makeText(context, "you got it", Toast.LENGTH_LONG).show();
         // do here
-            //getvalues(context,intent);
+            getvalues(context,intent);
        }
 
     }
@@ -62,9 +65,15 @@ public class InternetCheck extends BroadcastReceiver {
 
                 //looping through all the heroes and inserting the names inside the string array
                 for (int i = 0; i < eventlist.size(); i++) {
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+                    Toast.makeText(context, eventlist.get(i).getCode(), Toast.LENGTH_LONG).show();
+                    if(eventlist.get(i).getCode() != sharedPreferences.getInt("key", 0)) {
 
-                    notifiaction(eventlist.get(i).getEvent(),eventlist.get(i).getInfo(),context,intent);
-
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("key", eventlist.get(i).getCode());
+                        editor.commit();
+                        notifiaction(eventlist.get(i).getEvent(), eventlist.get(i).getInfo(), context, intent);
+                    }
                 }
 
 
