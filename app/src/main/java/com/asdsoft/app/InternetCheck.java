@@ -23,9 +23,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by LENOVO on 12-02-2018.
- */
 
 public class InternetCheck extends BroadcastReceiver {
 
@@ -38,7 +35,7 @@ public class InternetCheck extends BroadcastReceiver {
 
         NetworkInfo ni = cm.getActiveNetworkInfo();
         if(ni != null){
-        Toast.makeText(context, "you got it", Toast.LENGTH_LONG).show();
+        //Toast.makeText(context, "you got it", Toast.LENGTH_LONG).show();
         // do here
             getvalues(context,intent);
        }
@@ -66,7 +63,7 @@ public class InternetCheck extends BroadcastReceiver {
                 //looping through all the heroes and inserting the names inside the string array
                 for (int i = 0; i < eventlist.size(); i++) {
                     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-                    Toast.makeText(context, eventlist.get(i).getCode(), Toast.LENGTH_LONG).show();
+                   // Toast.makeText(context, eventlist.get(i).getCode().toString(), Toast.LENGTH_LONG).show();
                     if(eventlist.get(i).getCode() != sharedPreferences.getInt("key", 0)) {
 
                         SharedPreferences.Editor editor = sharedPreferences.edit();
