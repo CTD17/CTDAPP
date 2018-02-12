@@ -10,7 +10,7 @@ import retrofit2.http.GET;
 
 public interface Api {
     String BASE_URL = "https://amey.pythonanywhere.com/";
-
+    //String BASE_URL = "http://192.168.0.115/dashboard/Android/";
     @GET("app")
     Call<List<Notify>> getevent();
 }

@@ -35,7 +35,7 @@ public class InternetCheck extends BroadcastReceiver {
 
         NetworkInfo ni = cm.getActiveNetworkInfo();
         if(ni != null){
-        //Toast.makeText(context, "you got it", Toast.LENGTH_LONG).show();
+       // Toast.makeText(context, "you got it", Toast.LENGTH_LONG).show();
         // do here
             getvalues(context,intent);
        }
