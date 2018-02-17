@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -46,19 +47,12 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                              boolean isLastChild, View convertView, ViewGroup parent) {
 
         final String childText = (String) getChild(groupPosition, childPosition);
-
+        LinearLayout linearLayout = (LinearLayout)parent.findViewById(R.id.linrealayout);
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = infalInflater.inflate(R.layout.list_item, null);
-        }
-        ImageView myimage =(ImageView)convertView.findViewById(R.id.imageView);
-        if (groupPosition == 0){
-            myimage.setImageDrawable(convertView.getResources().getDrawable(R.drawable.ml, _context.getTheme()));
-        }
-        else{
-            myimage.setImageDrawable(convertView.getResources().getDrawable(R.drawable.cpp, _context.getTheme()));
-        }
+            convertView = infalInflater.inflate(R.layout.list_item,null);}
+
         TextView txtListChild = (TextView) convertView
                 .findViewById(R.id.lblListItem);
 
@@ -91,12 +85,17 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
         String headerTitle = (String) getGroup(groupPosition);
+
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = infalInflater.inflate(R.layout.list_group, null);
+            convertView = infalInflater.inflate(R.layout.list_group,null);
         }
-
+        ImageView myimage =(ImageView)convertView.findViewById(R.id.imageView);
+        if(groupPosition == 0)
+        myimage.setImageDrawable(convertView.getResources().getDrawable(R.drawable.ml, _context.getTheme()));
+        else
+            myimage.setImageDrawable(convertView.getResources().getDrawable(R.drawable.cpp, _context.getTheme()));
         TextView lblListHeader = (TextView) convertView
                 .findViewById(R.id.lblListHeader);
         lblListHeader.setTypeface(null, Typeface.BOLD);

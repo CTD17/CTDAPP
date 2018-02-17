@@ -38,7 +38,9 @@ public class BlankFragment extends android.app.Fragment {
         //hello
         // Adding child data
         listDataHeader.add("An Introduction to Machine Learning");
-        listDataHeader.add("C++ coding");
+        listDataHeader.add("An Introduction to C++ coding");
+        listDataHeader.add("An Introduction to C coding");
+        listDataHeader.add("An Introduction to python coding");
 
         // Adding child data
         List<String> ml = new ArrayList<String>();
@@ -49,9 +51,17 @@ public class BlankFragment extends android.app.Fragment {
         List<String> cpp = new ArrayList<String>();
         cpp.add("When we consider a C++ program, it can be defined as a collection of objects that communicate via invoking each other's methods. Let us now briefly look into what a class, object, methods, and instant variables mean.");
 
+        List<String> c = new ArrayList<String>();
+        c.add("When we consider a C++ program, it can be defined as a collection of objects that communicate via invoking each other's methods. Let us now briefly look into what a class, object, methods, and instant variables mean.");
+
+        List<String> p = new ArrayList<String>();
+        p.add("When we consider a C++ program, it can be defined as a collection of objects that communicate via invoking each other's methods. Let us now briefly look into what a class, object, methods, and instant variables mean.");
+
 
 
         listDataChild.put(listDataHeader.get(0), ml); // Header, Child data
         listDataChild.put(listDataHeader.get(1), cpp);
+        listDataChild.put(listDataHeader.get(2), c);
+        listDataChild.put(listDataHeader.get(3), p);
     }
 }
