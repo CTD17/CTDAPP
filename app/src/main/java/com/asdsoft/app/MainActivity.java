@@ -1,15 +1,25 @@
 package com.asdsoft.app;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.app.job.JobService;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -27,6 +37,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,15 +47,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -105,6 +109,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_sig) {
 
 
+            try {
+                jshedular();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             manager.popBackStack();
             manager.beginTransaction().addToBackStack(null);
             manager.beginTransaction().replace(R.id.frame, new BlankFragment()).commit();
@@ -121,5 +131,36 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void jshedular() throws InterruptedException {
+        Toast.makeText(this,"Job Shedular  ...",Toast.LENGTH_LONG);
+        ComponentName serviceComponent = new ComponentName(this, JService.class);
+        JobInfo.Builder builder = new JobInfo.Builder(0, serviceComponent);
+        // builder.setMinimumLatency(1 * 1000); // wait at least
+        // builder.setOverrideDeadline(3 * 1000); // maximum delay
+       // builder.setPeriodic(10000);
+       builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
+        JobScheduler jobScheduler = null;
+
+            jobScheduler = (JobScheduler) this.getSystemService(JOB_SCHEDULER_SERVICE);
+
+        int resultCode = jobScheduler.schedule(builder.build());
+        String TAG = "hello";
+        if (resultCode == JobScheduler.RESULT_SUCCESS) {
+            Log.d(TAG, "Job scheduled!");
+        } else {
+            Log.d(TAG, "Job not scheduled");
+        }
+       // jobScheduler.cancelAll();
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void shedule(JobScheduler jobScheduler, JobInfo jobinfo){
+        jobScheduler.schedule(jobinfo);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void cancel(JobScheduler jobScheduler, JobInfo jobinfo){
+     jobScheduler.cancelAll();
     }
 }
