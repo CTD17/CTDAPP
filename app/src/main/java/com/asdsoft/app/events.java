@@ -1,6 +1,8 @@
 package com.asdsoft.app;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,6 +25,7 @@ public class events extends android.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        //SharedPreferences setting =  getSharedPreferences("Setting", Context.MODE_PRIVATE);
         return inflater.inflate(R.layout.fragment_events, container, false);
     }
 
