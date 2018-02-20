@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             manager.popBackStack();
             manager.beginTransaction().addToBackStack(null);
-            manager.beginTransaction().replace(R.id.frame, new events()).commit();
+            manager.beginTransaction().replace(R.id.frame, new Event()).commit();
 
 
         } else if (id == R.id.nav_sig) {
