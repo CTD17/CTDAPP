@@ -22,6 +22,8 @@ public class JService extends JobService {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
+        Intent intent = new Intent(this, MainActivity.class);
+        new Athread(this,intent).execute();
         String TAG = "hello";
         Log.d(TAG, "Job in ..!");
        jobFinished(jobParameters,true);
@@ -33,3 +35,4 @@ public class JService extends JobService {
         return true;
     }
 }
+
