@@ -18,7 +18,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlankFragment extends android.app.Fragment {
+public class SigFragment extends android.app.Fragment {
 
 
     List<String> listDataHeader;

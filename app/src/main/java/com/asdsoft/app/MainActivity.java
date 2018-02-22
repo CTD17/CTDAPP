@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity
 
             manager.popBackStack();
             manager.beginTransaction().addToBackStack(null);
-            manager.beginTransaction().replace(R.id.frame, new BlankFragment()).commit();
+            manager.beginTransaction().replace(R.id.frame, new SigFragment()).commit();
 
 
         } else if (id == R.id.nav_manage) {
