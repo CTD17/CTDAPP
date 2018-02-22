@@ -47,7 +47,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.asdsoft.app.MainActivity" />
         </activity>
-
+        <activity android:name=".seminarActivity"></activity>
         <service
             android:name=".JService"
             android:enabled="true"

@@ -27,13 +27,5 @@ public class seminarActivity extends AppCompatActivity {
 
         iv.setImageResource(i);
         tv.setText(s);
-
-
-
-
-
-
-
-
     }
 }

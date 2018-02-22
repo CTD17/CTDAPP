@@ -80,15 +80,4 @@ public class seminars extends android.app.Fragment {
         return v;
     }
 
-
-    public void prepareSem(int i)
-    {
-
-
-    }
-
-
-
-
-
 }
