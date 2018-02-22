@@ -57,6 +57,7 @@
         android:visibility="gone"
         android:paddingLeft="@dimen/fab_margin"
         android:paddingRight="@dimen/fab_margin"
+        android:paddingEnd="@dimen/fab_margin"
         />
     <!--android:paddingRight="@android:dimen/app_icon_size"-->
     <!--android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"-->
