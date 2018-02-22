@@ -39,7 +39,7 @@ public class Bservice extends IntentService {
     protected void onHandleIntent(@Nullable Intent intent) {
         while (true){
             getvalues(getApplicationContext(),intent);
-            SystemClock.sleep(50000);
+            SystemClock.sleep(5000);
             //Toast.makeText(getApplicationContext(), "you got it", Toast.LENGTH_LONG).show();
 
           //  Log.v("internetcheck:","You got It" );
