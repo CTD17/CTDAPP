@@ -110,7 +110,9 @@ public class MainActivity extends AppCompatActivity
 
 
             try {
-                jshedular();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    jshedular();
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
