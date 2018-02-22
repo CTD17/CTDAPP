@@ -37,10 +37,10 @@ public class InternetCheck extends BroadcastReceiver {
             NetworkInfo ni = cm.getActiveNetworkInfo();
             i = new Intent(context, Bservice.class);
             if (ni != null) {
-                //
+                //tion
+
                 // do here
                 //
-
 
                 SharedPreferences.Editor editor = settings.edit();
                 editor.putInt("service", 1);
