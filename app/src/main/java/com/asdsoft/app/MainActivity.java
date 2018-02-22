@@ -53,8 +53,13 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        if (savedInstanceState == null) {
+            navigationView.getMenu().performIdentifierAction(R.id.nav_home, 0);
+        }
+
+
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -98,7 +103,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         FragmentManager manager = getFragmentManager();
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_home)
+        {
+            manager.popBackStack();
+            manager.beginTransaction().addToBackStack(null);
+            manager.beginTransaction().replace(R.id.frame, new Home()).commit();
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
             manager.popBackStack();
@@ -122,7 +131,11 @@ public class MainActivity extends AppCompatActivity
             manager.beginTransaction().replace(R.id.frame, new SigFragment()).commit();
 
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_seminar) {
+
+            manager.popBackStack();
+            manager.beginTransaction().addToBackStack(null);
+            manager.beginTransaction().replace(R.id.frame, new seminars()).commit();
 
         } else if (id == R.id.nav_share) {
 

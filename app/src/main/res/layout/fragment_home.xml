@@ -1,0 +1,70 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/homeframe"
+    tools:context="com.asdsoft.app.seminars">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.drenu.neerajapp.Home">
+
+    <!-- TODO: Update blank fragment layout -->
+<!--    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="HOME" />
+-->
+
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/carouselView"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        app:fillColor="#FFFFFFFF"
+        app:pageColor="#00000000"
+        app:radius="6dp"
+        app:slideInterval="3000"
+        android:layout_margin="10dp"
+        app:strokeColor="#FF777777"
+        app:strokeWidth="1dp"/>
+
+    <Button
+        android:id="@+id/ctd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/carouselView"
+        android:layout_marginTop="90dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:background="#d3d3d3"
+        android:text="CTD" />
+
+    <Button
+        android:id="@+id/pisb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About PISB"
+        android:layout_below="@id/ctd"
+        android:background="#ffffff"
+        android:layout_margin="15dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/ieee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pisb"
+        android:layout_centerHorizontal="true"
+        android:background="#D3D3D3"
+        android:layout_margin="15dp"
+        android:text="About IEEE" />
+
+
+
+
+</RelativeLayout>
+
+</FrameLayout>
