@@ -29,7 +29,7 @@ public class InternetCheck extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-        boolean nnotifypref = settings.getBoolean("notifications_new_message",false);
+        boolean nnotifypref = settings.getBoolean("notifications_new_message", false);
         if (nnotifypref) {
             ConnectivityManager cm = (ConnectivityManager)
                     context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -37,16 +37,13 @@ public class InternetCheck extends BroadcastReceiver {
             NetworkInfo ni = cm.getActiveNetworkInfo();
             i = new Intent(context, Bservice.class);
             if (ni != null) {
-                //tion
-
-                // do here
                 //
 
                 SharedPreferences.Editor editor = settings.edit();
                 editor.putInt("service", 1);
                 editor.commit();
 
-              context.startService(i);
+                context.startService(i);
             } else {
 
                 if (settings.getInt("service", 0) == 1) {
@@ -54,19 +51,16 @@ public class InternetCheck extends BroadcastReceiver {
                     SharedPreferences.Editor editor = settings.edit();
                     editor.putInt("service", 0);
                     editor.commit();
+                } else {
+                    if (settings.getInt("service", 0) == 1) {
+                        context.stopService(i);
+                        SharedPreferences.Editor editor = settings.edit();
+                        editor.putInt("service", 0);
+                        editor.commit();
+                    }
+
                 }
             }
-
         }
-
-    else{
-            if (settings.getInt("service", 0) == 1) {
-                context.stopService(i);
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putInt("service", 0);
-                editor.commit();
-            }
-
     }
-}
 }
