@@ -2,19 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/hex1"
     tools:context="com.asdsoft.app.seminars">
 
     <!-- TODO: Update blank fragment layout -->
 
- <!--   <TextView
+    <!--   <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Seminars"/>
   -->
-  <ListView
+    <ListView
+        android:id="@+id/semlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/semlist" />
+        android:background="@color/default_circle_indicator_page_color"
+        android:backgroundTint="@color/colorPrimary"
+        android:scrollIndicators="right" />
 
 
 </FrameLayout>
