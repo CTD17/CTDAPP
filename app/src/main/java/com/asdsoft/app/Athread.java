@@ -73,7 +73,7 @@ public class Athread extends AsyncTask<Void,Void,Void> {
 
             @Override
             public void onFailure(Call<List<Notify>> call, Throwable t) {
-                Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
