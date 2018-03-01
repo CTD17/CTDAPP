@@ -40,7 +40,8 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
         android:background="#d3d3d3"
-        android:text="CTD" />
+        android:text="CTD"
+        android:textColor="@color/cardview_light_background"/>
 
     <Button
         android:id="@+id/pisb"
