@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
@@ -80,6 +81,7 @@ public class SigFragment extends android.app.Fragment {
     }
 
     class adapter extends BaseAdapter {
+        private int mLastPosition;
 
         @Override
         public int getCount() {
@@ -110,6 +112,15 @@ public class SigFragment extends android.app.Fragment {
             else
                 imageView.setImageResource(R.drawable.blue);
             textView.setText(listDataHeader.get(i));
+            float initialTranslation = (mLastPosition <= i ? 500f : -500f);
+            view.setTranslationY(initialTranslation);
+            view.animate()
+                    .setInterpolator(new DecelerateInterpolator(1.0f))
+                    .translationY(0f)
+                    .setDuration(300l)
+                    .setListener(null);
+
+            mLastPosition = i;
 
             return view;
         }
