@@ -26,7 +26,7 @@
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:src="@drawable/ctd2"
+            android:src="@drawable/ctd1"
             android:contentDescription="CREDENZ TECH DAYS"
 
             />
@@ -71,8 +71,16 @@
             app:btn_text="Know About The Event"
             app:text_size="15dp" />
 
-
-
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/awesome_btn"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="SWIPE>>>"
+            android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+            android:textSize="18sp" />
 
 
     </RelativeLayout>
