@@ -81,5 +81,10 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="ctd_info">Credenz Tech Dayz (CTD) is organised every year by the members of PISB. It comprises of series of Seminars delivered by industrialists and experts on trending ideas in the field of technology.
+
+PISB members has also taken an initiative to conduct SIGs (Special Interest Groups) under CTD to teach you topics of your choice and to clarify your doubts. Topics are selected from technical as well as nontechnical categories.
+
+In addition to this, several competitions take place to advance learning along with fun and excitement!</string>
     <string name="action_contactus">Contact us</string>
 </resources>

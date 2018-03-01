@@ -30,8 +30,8 @@ public class TabFragment extends android.app.Fragment {
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(myContext.getSupportFragmentManager());
         adapter.addFrag(new ChildTabFragment(), "CTD");
-        adapter.addFrag(new ChildTabFragment(), "PISB");
-        adapter.addFrag(new ChildTabFragment(), "IEEE");
+        adapter.addFrag(new ChildTabFragment1(), "PISB");
+        adapter.addFrag(new ChildTabFragment2(), "IEEE");
         viewPager.setAdapter(adapter);
 
         tabLayout = (TabLayout)v.findViewById(R.id.tabLayout);

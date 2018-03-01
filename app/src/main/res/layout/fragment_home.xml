@@ -1,71 +1,81 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/homeframe"
-    tools:context="com.asdsoft.app.seminars">
+    tools:context="com.asdsoft.app.seminarActivity"
+    >
 
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.drenu.neerajapp.Home">
-
-    <!-- TODO: Update blank fragment layout -->
-<!--    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="HOME" />
--->
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="com.example.drenu.neerajapp.Home"
+        android:background="@drawable/hex1">
+        <!-- TODO: Update blank fragment layout -->
+        <!--    <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="HOME" />
+        -->
 
-    <com.synnapps.carouselview.CarouselView
-        android:id="@+id/carouselView"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        app:fillColor="#FFFFFFFF"
-        app:pageColor="#00000000"
-        app:radius="6dp"
-        app:slideInterval="3000"
-        android:layout_margin="10dp"
-        app:strokeColor="#FF777777"
-        app:strokeWidth="1dp"/>
+        <ImageView
+            android:layout_margin="15dp"
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/ctd2"
+            android:contentDescription="CREDENZ TECH DAYS"
 
-    <Button
-        android:id="@+id/ctd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/carouselView"
-        android:layout_marginTop="90dp"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="15dp"
-        android:background="#d3d3d3"
-        android:text="CTD"
-        android:textColor="@color/cardview_light_background"/>
-
-    <Button
-        android:id="@+id/pisb"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="About PISB"
-        android:layout_below="@id/ctd"
-        android:background="#ffffff"
-        android:layout_margin="15dp"
-        android:layout_centerHorizontal="true"/>
-
-    <Button
-        android:id="@+id/ieee"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/pisb"
-        android:layout_centerHorizontal="true"
-        android:background="#D3D3D3"
-        android:layout_margin="15dp"
-        android:text="About IEEE" />
+            />
 
 
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/carouselView"
+            android:layout_width="match_parent"
+            android:layout_below="@id/imageView3"
+            android:layout_height="200dp"
+            android:layout_alignEnd="@+id/awesome_btn"
+            android:layout_margin="20dp"
+            app:fillColor="#FFFFFFFF"
+            app:pageColor="#00000000"
+            app:radius="6dp"
+            app:slideInterval="3000"
+            app:strokeColor="#FF777777"
+            app:strokeWidth="1dp"
+            />
+
+      <!--  <Button
+            android:id="@+id/ctd"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/carouselView"
+            android:layout_marginTop="90dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="15dp"
+            android:background="#d3d3d3"
+            android:text="CTD" />
+        -->
+
+        <in.shadowfax.proswipebutton.ProSwipeButton
+            android:id="@+id/awesome_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/carouselView"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:bg_color="@android:color/holo_blue_dark"
+            app:btn_text="Know About The Event"
+            app:text_size="15dp" />
 
 
-</RelativeLayout>
+
+
+
+    </RelativeLayout>
+
 
 </FrameLayout>

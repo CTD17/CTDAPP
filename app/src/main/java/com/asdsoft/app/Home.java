@@ -4,6 +4,7 @@ package com.asdsoft.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +15,14 @@ import android.widget.ImageView;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
+import in.shadowfax.proswipebutton.ProSwipeButton;
+
 
 public class Home extends android.app.Fragment implements View.OnClickListener {
 
     private FragmentActivity myContext;
 
-    int[] sampleImages = {R.drawable.img3, R.drawable.img4, R.drawable.img5};
+    int[] sampleImages = {R.drawable.ctd2, R.drawable.ctd, R.drawable.ctd2};
     CarouselView carouselView;
     Button btn1,btn2,btn3;
 
@@ -33,17 +36,35 @@ public class Home extends android.app.Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_home, container, false);
 
-        btn1=(Button)v.findViewById(R.id.ctd);
-        btn2=(Button)v.findViewById(R.id.pisb);
-        btn3=(Button)v.findViewById(R.id.ieee);
-
-        btn1.setOnClickListener(this);
+      //  btn1=(Button)v.findViewById(R.id.ctd);
+       // btn1.setOnClickListener(this);
 
 
         carouselView = (CarouselView) v.findViewById(R.id.carouselView);
         carouselView.setPageCount(sampleImages.length);
 
         carouselView.setImageListener(imageListener);
+
+        final ProSwipeButton proSwipeBtn = (ProSwipeButton)v.findViewById(R.id.awesome_btn);
+        proSwipeBtn.setOnSwipeListener(new ProSwipeButton.OnSwipeListener() {
+            @Override
+            public void onSwipeConfirm() {
+                // user has swiped the btn. Perform your async operation now
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // task success! show TICK icon in ProSwipeButton
+                        //proSwipeBtn.showResultIcon(true); // false if task failed
+                        getActivity().getFragmentManager().popBackStack();
+                        getActivity().getFragmentManager().beginTransaction().addToBackStack(null);
+                        getActivity().getFragmentManager().beginTransaction().replace(R.id.frame, new TabFragment()).commit();
+
+                    }
+                }, 1000);
+            }
+        });
+
+
         return v;
     }
 
