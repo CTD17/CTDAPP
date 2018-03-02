@@ -78,23 +78,27 @@ public class Athread extends AsyncTask<Void,Void,Void> {
         });
     }
     public void notifiaction(String event,String info,Context context,Intent intent) {
-
-        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent intent1 = new Intent(context,SplashScreen.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder b = new NotificationCompat.Builder(context);
+        int color = context.getResources().getColor(R.color.colorPrimary);
 
-        b.setAutoCancel(false)
+        b.setAutoCancel(true)
                 .setContentTitle(event)
-                .setSmallIcon(R.drawable.ic_menu_camera)
+                .setSmallIcon(R.drawable.unravel1)
                 .setContentText(info)
+                .setColor(color)
                 .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
                 .setContentIntent(contentIntent);
 
 
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(1, b.build());
+        notificationManager.notify(0, b.build());
     }
+
+
 
     public Athread(Context context,Intent intent) {
         this.context = context;

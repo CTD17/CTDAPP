@@ -14,6 +14,7 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -23,6 +24,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import static android.graphics.Color.RED;
 
 /**
  * Created by LENOVO on 17-02-2018.
@@ -96,22 +99,24 @@ public class Bservice extends IntentService {
         });
     }
     public void notifiaction(String event,String info,Context context,Intent intent) {
-
-        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent intent1 = new Intent(getApplicationContext(),SplashScreen.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder b = new NotificationCompat.Builder(context);
+        int color = getResources().getColor(R.color.colorPrimary);
 
-        b.setAutoCancel(false)
+        b.setAutoCancel(true)
                 .setContentTitle(event)
-                .setSmallIcon(R.drawable.ic_menu_camera)
+                .setSmallIcon(R.drawable.unravel1)
                 .setContentText(info)
+                .setColor(color)
                 .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
                 .setContentIntent(contentIntent);
 
 
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(1, b.build());
+        notificationManager.notify(0, b.build());
     }
 
 

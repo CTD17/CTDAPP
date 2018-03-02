@@ -126,7 +126,9 @@ public class MainActivity extends AppCompatActivity
 
             try {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    jshedular();
+                    SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+                    boolean nnotifypref = settings.getBoolean("notifications_new_message", true);
+                    jshedular(nnotifypref);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -154,17 +156,17 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void jshedular() throws InterruptedException {
-        Toast.makeText(this,"Job Shedular  ...",Toast.LENGTH_LONG);
+    public void jshedular(boolean a) throws InterruptedException {
+       // Toast.makeText(this,"Job Shedular  ...",Toast.LENGTH_LONG);
         ComponentName serviceComponent = new ComponentName(this, JService.class);
         JobInfo.Builder builder = new JobInfo.Builder(0, serviceComponent);
-        // builder.setMinimumLatency(1 * 1000); // wait at least
-        // builder.setOverrideDeadline(3 * 1000); // maximum delay
-       // builder.setPeriodic(10000);
-       builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
+        builder.setPeriodic(100000);
+        builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
         JobScheduler jobScheduler = null;
 
-            jobScheduler = (JobScheduler) this.getSystemService(JOB_SCHEDULER_SERVICE);
+        jobScheduler = (JobScheduler) this.getSystemService(JOB_SCHEDULER_SERVICE);
+
+        if(a){
 
         int resultCode = jobScheduler.schedule(builder.build());
         String TAG = "hello";
@@ -172,9 +174,10 @@ public class MainActivity extends AppCompatActivity
             Log.d(TAG, "Job scheduled!");
         } else {
             Log.d(TAG, "Job not scheduled");
-        }
-       // jobScheduler.cancelAll();
-    }
+        }}
+        else{
+        jobScheduler.cancelAll();
+    }}
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void shedule(JobScheduler jobScheduler, JobInfo jobinfo){
         jobScheduler.schedule(jobinfo);
