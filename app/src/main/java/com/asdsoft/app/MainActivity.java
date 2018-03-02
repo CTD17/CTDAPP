@@ -57,10 +57,12 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         if (savedInstanceState == null) {
-            navigationView.getMenu().performIdentifierAction(R.id.nav_home, 0);
+               navigationView.getMenu().performIdentifierAction(R.id.nav_home, 0);
+            navigationView.getMenu().getItem(0).setChecked(true);
         }
 
 
@@ -81,6 +83,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        //onOptionsItemSelected(menu.getItem(R.id.nav_home));
         return true;
     }
 
