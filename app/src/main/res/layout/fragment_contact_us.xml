@@ -41,7 +41,7 @@
             android:textAlignment="center"
             android:text="@string/test"
             android:id="@+id/num1"
-            android:clickable="true"
+            android:textIsSelectable="true"
             />
 
 
