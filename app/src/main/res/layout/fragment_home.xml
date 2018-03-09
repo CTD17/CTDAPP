@@ -81,20 +81,20 @@
             app:strokeColor="#FF777777"
             app:strokeWidth="1dp" />
 
-        <in.shadowfax.proswipebutton.ProSwipeButton
+        <Button
             android:id="@+id/awesome_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="52dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            app:bg_color="@android:color/holo_blue_dark"
-            app:btn_text="Know About The Event"
+            android:bg_color="@android:color/holo_blue_dark"
+            android:btn_text="Know About The Event"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:text_size="15dp" />
+            android:text_size="15dp" />
 
 
     </android.support.constraint.ConstraintLayout>
