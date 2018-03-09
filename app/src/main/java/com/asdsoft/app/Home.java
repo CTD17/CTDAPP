@@ -22,7 +22,7 @@ public class Home extends android.app.Fragment implements View.OnClickListener {
 
     private FragmentActivity myContext;
 
-    int[] sampleImages = {R.drawable.pic1, R.drawable.pic2, R.drawable.pic3};
+    int[] sampleImages = {R.drawable.carousel1, R.drawable.carousel2, R.drawable.carousel3};
     CarouselView carouselView;
     Button btn1,btn2,btn3;
 

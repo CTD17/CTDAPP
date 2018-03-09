@@ -71,10 +71,10 @@ public class ContactUs extends android.app.Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_contact_us, container, false);
-        TextView myTextView = (TextView) view.findViewById(R.id.num1);
+       // TextView myTextView = (TextView) view.findViewById(R.id.num1);
         String htmlText = "<a href='lauch.TCActivity://SENDEMAIL?email=mail@example.com&subject=email subject&body=this is email body'>Email</a>";
-        myTextView.setClickable(true);
-        myTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        //myTextView.setClickable(true);
+        //myTextView.setMovementMethod(LinkMovementMethod.getInstance());
         return inflater.inflate(R.layout.fragment_contact_us, container, false);
     }
 
@@ -91,8 +91,8 @@ public class ContactUs extends android.app.Fragment {
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+            //throw new RuntimeException(context.toString()
+              //      + " must implement OnFragmentInteractionListener");
         }
     }
 

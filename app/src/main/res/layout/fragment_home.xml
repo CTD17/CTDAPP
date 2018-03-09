@@ -1,19 +1,18 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeframe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/homeframe"
-    tools:context="com.asdsoft.app.seminarActivity"
-    >
+    tools:context="com.asdsoft.app.seminarActivity">
 
 
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context="com.example.drenu.neerajapp.Home"
-        android:background="@drawable/hex1">
+        android:background="@drawable/hex1"
+        tools:context="com.example.drenu.neerajapp.Home">
         <!-- TODO: Update blank fragment layout -->
         <!--    <TextView
                 android:layout_width="match_parent"
@@ -22,32 +21,20 @@
         -->
 
         <ImageView
-            android:layout_margin="15dp"
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:src="@drawable/ctd1"
+            android:layout_margin="15dp"
+            android:layout_marginEnd="8dp"
             android:contentDescription="CREDENZ TECH DAYS"
 
-            />
+            android:src="@drawable/ctd1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-        <com.synnapps.carouselview.CarouselView
-            android:id="@+id/carouselView"
-            android:layout_width="match_parent"
-            android:layout_below="@id/imageView3"
-            android:layout_height="200dp"
-            android:layout_alignEnd="@+id/awesome_btn"
-            android:layout_margin="20dp"
-            app:fillColor="#FFFFFFFF"
-            app:pageColor="#00000000"
-            app:radius="6dp"
-            app:slideInterval="3000"
-            app:strokeColor="#FF777777"
-            app:strokeWidth="1dp"
-            />
-
-      <!--  <Button
+        <!--  <Button
             android:id="@+id/ctd"
             android:layout_width="match_parent"
             android:layout_height="300dp"
@@ -59,31 +46,58 @@
             android:text="CTD" />
         -->
 
-        <in.shadowfax.proswipebutton.ProSwipeButton
-            android:id="@+id/awesome_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/carouselView"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            app:bg_color="@android:color/holo_blue_dark"
-            app:btn_text="Know About The Event"
-            app:text_size="15dp" />
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/awesome_btn"
-            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="SWIPE>>>"
             android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/awesome_btn" />
+
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/carouselView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            app:fillColor="#FFFFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/awesome_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            app:pageColor="#00000000"
+            app:radius="6dp"
+            app:slideInterval="3000"
+            app:strokeColor="#FF777777"
+            app:strokeWidth="1dp" />
+
+        <in.shadowfax.proswipebutton.ProSwipeButton
+            android:id="@+id/awesome_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="52dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:bg_color="@android:color/holo_blue_dark"
+            app:btn_text="Know About The Event"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:text_size="15dp" />
 
 
-    </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
 
 
 </FrameLayout>
