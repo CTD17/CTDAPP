@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_marginTop="8dp"
+        android:foreground="?android:attr/selectableItemBackground"
         app:cardBackgroundColor="#FF3A3A3A"
         app:cardCornerRadius="4dp"
         app:cardElevation="8dp">
@@ -27,6 +28,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#ffffff"
                 android:scaleType="centerCrop"
                 android:src="@drawable/cpp" />
 

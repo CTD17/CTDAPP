@@ -36,7 +36,8 @@ import java.io.PrintWriter;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener
+            {
 
 
     FragmentManager manager = getFragmentManager();
@@ -112,10 +113,12 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
         int id = item.getItemId();
         if (id == R.id.nav_home)
         {
@@ -133,7 +136,8 @@ public class MainActivity extends AppCompatActivity
 
 
             manager.popBackStack();
-            manager.beginTransaction().addToBackStack(null);
+            manager.beginTransaction().addToBackStack("Home");
+            Toast.makeText(this,"Job Shedular Working ...", Toast.LENGTH_SHORT).show();
             manager.beginTransaction().replace(R.id.frame, new SigFragment()).commit();
 
 

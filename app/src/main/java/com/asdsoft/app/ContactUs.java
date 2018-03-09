@@ -4,12 +4,14 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -20,7 +22,7 @@ import android.widget.TextView;
  * Use the {@link ContactUs#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ContactUs extends android.app.Fragment {
+public class ContactUs extends android.app.Fragment  implements FragmentManager.OnBackStackChangedListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -85,21 +87,35 @@ public class ContactUs extends android.app.Fragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            //throw new RuntimeException(context.toString()
-              //      + " must implement OnFragmentInteractionListener");
-        }
-    }
+//    @Override
+//    public void onAttach(Context context) {
+//        super.onAttach(context);
+//        if (context instanceof OnFragmentInteractionListener) {
+//            mListener = (OnFragmentInteractionListener) context;
+//        } else {
+//            throw new RuntimeException(context.toString()
+//                  + " must implement OnFragmentInteractionListener");
+//        }
+//    }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onBackStackChanged() {
+        android.app.FragmentManager manager = getFragmentManager();
+        int count = manager.getBackStackEntryCount();
+        FragmentManager.BackStackEntry entry = (FragmentManager.BackStackEntry) manager.getBackStackEntryAt(count-1);
+        Toast.makeText(getActivity(),"Job Shedular Working ...", Toast.LENGTH_SHORT).show();
+        if(entry.getName() == "Home"){
+            manager.popBackStack();
+            manager.beginTransaction().addToBackStack(null);
+            manager.beginTransaction().replace(R.id.frame, new Home()).commit();
+        }
+
     }
 
     /**

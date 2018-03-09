@@ -46,23 +46,33 @@ public class Home extends android.app.Fragment implements View.OnClickListener {
         carouselView.setImageListener(imageListener);
 
         final ProSwipeButton proSwipeBtn = (ProSwipeButton)v.findViewById(R.id.awesome_btn);
-        proSwipeBtn.setOnSwipeListener(new ProSwipeButton.OnSwipeListener() {
+
+        proSwipeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSwipeConfirm() {
-                // user has swiped the btn. Perform your async operation now
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        // task success! show TICK icon in ProSwipeButton
-                        //proSwipeBtn.showResultIcon(true); // false if task failed
-                        getActivity().getFragmentManager().popBackStack();
-                        getActivity().getFragmentManager().beginTransaction().addToBackStack(null);
+            public void onClick(View view) {
+                getActivity().getFragmentManager().popBackStack();
+                       getActivity().getFragmentManager().beginTransaction().addToBackStack(null);
                         getActivity().getFragmentManager().beginTransaction().replace(R.id.frame, new TabFragment()).commit();
 
-                    }
-                }, 1000);
             }
         });
+//        proSwipeBtn.setOnSwipeListener(new ProSwipeButton.OnSwipeListener() {
+//            @Override
+//            public void onSwipeConfirm() {
+//                // user has swiped the btn. Perform your async operation now
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        // task success! show TICK icon in ProSwipeButton
+//                        //proSwipeBtn.showResultIcon(true); // false if task failed
+//                        getActivity().getFragmentManager().popBackStack();
+//                        getActivity().getFragmentManager().beginTransaction().addToBackStack(null);
+//                        getActivity().getFragmentManager().beginTransaction().replace(R.id.frame, new TabFragment()).commit();
+//
+//                    }
+//                }, 1000);
+//            }
+//        });
 
 
         return v;
