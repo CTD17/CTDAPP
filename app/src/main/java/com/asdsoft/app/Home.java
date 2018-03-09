@@ -45,7 +45,7 @@ public class Home extends android.app.Fragment implements View.OnClickListener {
 
         carouselView.setImageListener(imageListener);
 
-        final ProSwipeButton proSwipeBtn = (ProSwipeButton)v.findViewById(R.id.awesome_btn);
+        final Button proSwipeBtn = (Button)v.findViewById(R.id.awesome_btn);
 
         proSwipeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +68,7 @@ public class Home extends android.app.Fragment implements View.OnClickListener {
 //                        getActivity().getFragmentManager().popBackStack();
 //                        getActivity().getFragmentManager().beginTransaction().addToBackStack(null);
 //                        getActivity().getFragmentManager().beginTransaction().replace(R.id.frame, new TabFragment()).commit();
-//
+//z
 //                    }
 //                }, 1000);
 //            }
@@ -77,6 +77,13 @@ public class Home extends android.app.Fragment implements View.OnClickListener {
 
         return v;
     }
+
+    public void gotoNext(View view){
+                      getActivity().getFragmentManager().popBackStack();
+                        getActivity().getFragmentManager().beginTransaction().addToBackStack(null);
+                       getActivity().getFragmentManager().beginTransaction().replace(R.id.frame, new TabFragment()).commit();
+    }
+
 
     @Override
     public void onClick(View view)
