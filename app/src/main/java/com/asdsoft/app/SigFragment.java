@@ -32,11 +32,12 @@ public class SigFragment extends android.app.Fragment {
                              Bundle savedInstanceState) {
         context = container.getContext();
         myview = inflater.inflate(R.layout.sig,container,false);
-        ListView listView=(ListView)myview.findViewById(R.id.listView);
+        final ListView listView=(ListView)myview.findViewById(R.id.listView);
         prepareListData();
        adapter a = new adapter();
 
         listView.setAdapter(a);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -44,15 +45,30 @@ public class SigFragment extends android.app.Fragment {
 
 
                 TextView txtView = (TextView)view.findViewById(R.id.textview);
-
+               // txtView.getParent().requestChildFocus(txtView,txtView);
                 //Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show();
                 if (txtView .getVisibility() == View.VISIBLE) {
                     txtView.setVisibility(View.GONE);
+                    //txtView.setFocusable(false);
                     txtView.setText("");
                     // txtView.setHeight(0);
                 }
                 else {
                     txtView.setVisibility(View.VISIBLE);
+                    listView.smoothScrollToPosition(position);
+
+                    //txtView.requestFocus();
+                    //listView.requestChildFocus(view,view);
+  //                  listView.scrollTo(0,500);
+                   float initialTranslation = (-50f);
+//
+//                    txtView.setTranslationY(initialTranslation);
+//                    txtView.isFocused();
+//                    txtView.animate()
+//                            .setInterpolator(new DecelerateInterpolator(1.0f))
+//                            .translationY(0f)
+//                            .setDuration(300l)
+//                            .setListener(null);
                     txtView.setText(listDataChild.get(position));
                     // txtView.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
 

@@ -16,9 +16,9 @@
             android:text="\n"
 
             android:visibility="invisible"/>
-        <android.support.design.widget.FloatingActionButton
-            android:src="@drawable/img1"
-            app:fabSize="auto"
+        <ImageView
+            android:src="@drawable/photo1"
+            android:background="@drawable/back"
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="150dp" />
@@ -51,9 +51,9 @@
             android:text="\n"
             android:visibility="invisible"/>
 
-        <android.support.design.widget.FloatingActionButton
-            android:src="@drawable/img1"
-            app:fabSize="auto"
+        <ImageView
+            android:src="@drawable/photo2"
+
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="150dp" />
