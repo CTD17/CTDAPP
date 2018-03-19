@@ -11,17 +11,18 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/num2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="@string/test"
-            android:id="@+id/num2"
             android:autoLink="phone|all"
+            android:gravity="center"
             android:linksClickable="true"
-            android:textIsSelectable="true"
-
             android:orientation="vertical"
-            >
+            android:text="@string/test"
+
+            android:textAlignment="center"
+            android:textIsSelectable="true">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
@@ -35,26 +36,6 @@
                 android:layout_gravity="center"
                 android:src="@drawable/photo2" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="name"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="email"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="+919876543210"
-            android:autoLink="phone|all"
-            android:linksClickable="true"
-            />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,7 +54,7 @@
 
             <TextView
                 android:id="@+id/num1"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autoLink="phone"
                 android:text="@string/test"
@@ -109,11 +90,16 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autoLink="phone"
                 android:text="9876543210"
                 android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>

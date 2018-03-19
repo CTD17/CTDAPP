@@ -1,6 +1,9 @@
 package com.asdsoft.app;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -24,6 +27,7 @@ public class SigFragment extends android.app.Fragment {
 
     List<String> listDataHeader;
     List<String> listDataChild;
+    List<Integer> listImages;
     View myview;
     Context context;
     @Nullable
@@ -80,20 +84,24 @@ public class SigFragment extends android.app.Fragment {
     private void prepareListData() {
         listDataHeader = new ArrayList<String>();
         listDataChild = new ArrayList<String>();
+        listImages=new ArrayList<>();
         //hello
         // Adding child data
-        listDataHeader.add("An Introduction to Machine Learning");
-        listDataHeader.add("An Introduction to C++ coding");
-        listDataHeader.add("An Introduction to C coding");
-        listDataHeader.add("An Introduction to python coding");
+        listDataHeader.add("Basics of programming");
+        listDataHeader.add("Data structures using C/C++");
+        listDataHeader.add("Shell scripting using Python");
+        listDataHeader.add("Machine learning");
+        listImages.add(R.drawable.sig1);
+        listImages.add(R.drawable.cplus);
+        listImages.add(R.drawable.py);
+        listImages.add(R.drawable.brain);
+
 
         // Adding child data
-        listDataChild.add("Introduction\n" +
-                "Machine learning is a subfield of artificial intelligence (AI). The goal of machine learning generally is to understand the structure of data and fit that data into models that can be understood and utilized by people.");
-        listDataChild.add("When we consider a C++ program, it can be defined as a collection of objects that communicate via invoking each other's methods. Let us now briefly look into what a class, object, methods, and instant variables mean.");
-        listDataChild.add("When we consider a C++ program, it can be defined as a collection of objects that communicate via invoking each other's methods. Let us now briefly look into what a class, object, methods, and instant variables mean.");
-        listDataChild.add("When we consider a C++ program, it can be defined as a collection of objects that communicate via invoking each other's methods. Let us now briefly look into what a class, object, methods, and instant variables mean.");
-
+       listDataChild.add("Basics of computer programming using C/C++ is explained.\nThe different kinds of algorithms are explored.Various problem solving methods and object oriented programming approaches are also seen.\n");
+        listDataChild.add("Data structures are at the core of computer programming. These help in the effective organisation and handling of data.\nThe basic data structures are explored with the help of C/C++ in this SIG.");
+        listDataChild.add("A shell script is a computer program designed to be run by the Unix shell, a command-line interpreter.The various dialects of shell scripts are considered to be scripting languages.\nIn this SIG Shell Scripting is explored with Python.");
+        listDataChild.add("How does a machine make intelligent decisions?\nHow does a self driving car drive without human intervention?\nThe answer to these and many other questions is machine learning!\nIn this SIG an introduction of machine learning and its basic algorithms is given.");
     }
 
     class adapter extends BaseAdapter {
@@ -123,10 +131,11 @@ public class SigFragment extends android.app.Fragment {
             }
             ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
             TextView textView = (TextView)view.findViewById(R.id.lblListHeader);
-            if(i%2 == 0)
-                imageView.setImageResource(R.drawable.cpp);
-            else
-                imageView.setImageResource(R.drawable.blue);
+        //    if(i == 0)
+          //      imageView.setImageResource(R.drawable.cpp);
+           // else if(i==1)
+             //   imageView.setImageResource(R.drawable.cpp);
+            imageView.setImageResource(listImages.get(i));
             textView.setText(listDataHeader.get(i));
             float initialTranslation = (mLastPosition <= i ? 500f : -500f);
             view.setTranslationY(initialTranslation);
