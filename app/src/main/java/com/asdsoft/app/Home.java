@@ -6,6 +6,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +23,7 @@ import in.shadowfax.proswipebutton.ProSwipeButton;
 public class Home extends android.app.Fragment implements View.OnClickListener {
 
     private FragmentActivity myContext;
-
+    View v;
     int[] sampleImages = {R.drawable.carousel1, R.drawable.carousel2, R.drawable.carousel3};
     CarouselView carouselView;
     Button btn1,btn2,btn3;
@@ -30,11 +32,30 @@ public class Home extends android.app.Fragment implements View.OnClickListener {
 
     }
 
+    public  void  onBackPressed(){
+
+        TabFragment tabFragment = (TabFragment) getFragmentManager().findFragmentByTag("Tab");
+        DrawerLayout drawer = (DrawerLayout) v.findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
+        ContactUs contact = (ContactUs) getFragmentManager().findFragmentByTag("fragment_contact");
+        if ((tabFragment != null && tabFragment.isVisible())) {
+            getFragmentManager().beginTransaction().replace(R.id.frame, new Home()).commit();
+        }
+
+        else {
+            //moveTaskToBack(true);
+            //Process.killProcess(Process.myPid());
+            System.exit(1);
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment_home, container, false);
+        v=inflater.inflate(R.layout.fragment_home, container, false);
 
       //  btn1=(Button)v.findViewById(R.id.ctd);
        // btn1.setOnClickListener(this);
@@ -80,8 +101,8 @@ public class Home extends android.app.Fragment implements View.OnClickListener {
 
     public void gotoNext(View view){
                       getActivity().getFragmentManager().popBackStack();
-                        getActivity().getFragmentManager().beginTransaction().addToBackStack(null);
-                       getActivity().getFragmentManager().beginTransaction().replace(R.id.frame, new TabFragment()).commit();
+                        getActivity().getFragmentManager().beginTransaction().addToBackStack("Tab");
+                       getActivity().getFragmentManager().beginTransaction().replace(R.id.frame, new TabFragment(),"Tab").commit();
     }
 
 

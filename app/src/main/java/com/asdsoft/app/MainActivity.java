@@ -89,13 +89,13 @@ public class MainActivity extends AppCompatActivity
         Home home = (Home) getFragmentManager().findFragmentByTag("home") ;
 
         //feedback fEEd = (feedback) getFragmentManager().findFragmentByTag("fragment_feedback");
-
+        TabFragment tabFragment = (TabFragment) getFragmentManager().findFragmentByTag("Tab");
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
         ContactUs contact = (ContactUs) getFragmentManager().findFragmentByTag("fragment_contact");
-        if ((event != null && event.isVisible())  || ((sig != null && sig.isVisible()) || ((seminar != null && seminar.isVisible()) || ((contact != null && contact.isVisible()) || ((seminar != null && seminar.isVisible()) ))))) {
+        if ((event != null && event.isVisible())   || ((sig != null && sig.isVisible()) || ((seminar != null && seminar.isVisible()) || ((contact != null && contact.isVisible()) || ((seminar != null && seminar.isVisible()) || ((tabFragment != null && tabFragment.isVisible()))))))) {
             getFragmentManager().beginTransaction().replace(R.id.frame, new Home()).commit();
         }
         else if ((home == null || !home.isVisible())){
