@@ -78,13 +78,33 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+
     @Override
     public void onBackPressed() {
+
+        Event event = (Event) getFragmentManager().findFragmentByTag("fragment_events");
+        SigFragment sig = (SigFragment) getFragmentManager().findFragmentByTag("fragment_sig");
+        seminars seminar = (seminars) getFragmentManager().findFragmentByTag("fragment_seminars");
+
+        Home home = (Home) getFragmentManager().findFragmentByTag("home") ;
+
+        //feedback fEEd = (feedback) getFragmentManager().findFragmentByTag("fragment_feedback");
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }
+        ContactUs contact = (ContactUs) getFragmentManager().findFragmentByTag("fragment_contact");
+        if ((event != null && event.isVisible())  || ((sig != null && sig.isVisible()) || ((seminar != null && seminar.isVisible()) || ((contact != null && contact.isVisible()) || ((seminar != null && seminar.isVisible()) ))))) {
+            getFragmentManager().beginTransaction().replace(R.id.frame, new Home()).commit();
+        }
+        else if ((home == null || !home.isVisible())){
             super.onBackPressed();
+        }
+        else {
+            moveTaskToBack(true);
+            //Process.killProcess(Process.myPid());
+            System.exit(1);
         }
     }
 
@@ -123,36 +143,40 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home)
         {
             manager.popBackStack();
-            manager.beginTransaction().addToBackStack(null);
+            manager.beginTransaction().addToBackStack("home");
             manager.beginTransaction().replace(R.id.frame, new Home()).commit();
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
             manager.popBackStack();
-            manager.beginTransaction().addToBackStack(null);
-            manager.beginTransaction().replace(R.id.frame, new Event()).commit();
+            manager.beginTransaction().addToBackStack("fragment_events");
+            manager.beginTransaction().replace(R.id.frame, new Event(),"fragment_events").commit();
 
 
         } else if (id == R.id.nav_sig) {
 
 
             manager.popBackStack();
-            manager.beginTransaction().addToBackStack("Home");
-            Toast.makeText(this,"Job Shedular Working ...", Toast.LENGTH_SHORT).show();
-            manager.beginTransaction().replace(R.id.frame, new SigFragment()).commit();
+            manager.beginTransaction().addToBackStack("fragment_sig");
+            //Toast.makeText(this,"Job Shedular Working ...", Toast.LENGTH_SHORT).show();
+            manager.beginTransaction().replace(R.id.frame, new SigFragment(),"fragment_sig").commit();
 
 
         } else if (id == R.id.nav_seminar) {
 
             manager.popBackStack();
-            manager.beginTransaction().addToBackStack(null);
-            manager.beginTransaction().replace(R.id.frame, new seminars()).commit();
+            manager.beginTransaction().addToBackStack("fragment_seminars");
+            manager.beginTransaction().replace(R.id.frame, new seminars(),"fragment_seminars").commit();
 
         } else if (id == R.id.nav_share) {
             manager.popBackStack();
-            manager.beginTransaction().addToBackStack(null);
-            manager.beginTransaction().replace(R.id.frame, new ContactUs()).commit();
+            manager.beginTransaction().addToBackStack("fragment_contact");
+            manager.beginTransaction().replace(R.id.frame, new ContactUs(),"fragment_contact").commit();
 
         } else if (id == R.id.nav_send) {
+            Intent share = new Intent("android.intent.action.SEND");
+            share.setType("text/plain");
+            share.putExtra("android.intent.extra.TEXT", getString(R.string.app_share) + "https://play.google.com/store/apps/details?id=com.pisb.ctd");
+            startActivity(Intent.createChooser(share, "Share via"));
 
         }
 

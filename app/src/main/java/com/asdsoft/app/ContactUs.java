@@ -22,7 +22,7 @@ import android.widget.Toast;
  * Use the {@link ContactUs#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ContactUs extends android.app.Fragment  implements FragmentManager.OnBackStackChangedListener{
+public class ContactUs extends android.app.Fragment  {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -104,19 +104,7 @@ public class ContactUs extends android.app.Fragment  implements FragmentManager.
         mListener = null;
     }
 
-    @Override
-    public void onBackStackChanged() {
-        android.app.FragmentManager manager = getFragmentManager();
-        int count = manager.getBackStackEntryCount();
-        FragmentManager.BackStackEntry entry = (FragmentManager.BackStackEntry) manager.getBackStackEntryAt(count-1);
-        Toast.makeText(getActivity(),"Job Shedular Working ...", Toast.LENGTH_SHORT).show();
-        if(entry.getName() == "Home"){
-            manager.popBackStack();
-            manager.beginTransaction().addToBackStack(null);
-            manager.beginTransaction().replace(R.id.frame, new Home()).commit();
-        }
 
-    }
 
     /**
      * This interface must be implemented by activities that contain this
