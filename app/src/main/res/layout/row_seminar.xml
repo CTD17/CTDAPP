@@ -28,8 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="Seminar1"
-            android:textColor="@color/colorPrimary"
-            android:textSize="22dp"/>
+            android:textColor="@color/cardview_light_background"
+            android:textSize="22dp" />
 
 
     </LinearLayout>

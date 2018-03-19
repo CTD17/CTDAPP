@@ -11,21 +11,9 @@ public class seminarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seminar);
-
-        Bundle b;
-
-        b=getIntent().getExtras();
-
-        String s=b.getString("key");
-        int i=b.getInt("imgid");
-
+        String s="Workshop on Civil Services";
         TextView tv;
-        tv=(TextView)findViewById(R.id.info);
-
-        ImageView iv;
-        iv=(ImageView)findViewById(R.id.imageView2);
-
-        iv.setImageResource(i);
+        tv=(TextView)findViewById(R.id.tv);
         tv.setText(s);
     }
 }

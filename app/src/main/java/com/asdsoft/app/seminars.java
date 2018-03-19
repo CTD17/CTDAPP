@@ -13,13 +13,7 @@ public class seminars extends android.app.Fragment {
 
     public ListView lv;
     public String[] s={
-
-            "Seminar 1",
-            "Seminar 2",
-            "Seminar 3",
-            "Seminar 4",
-            "Seminar 5",
-            "Seminar 6"
+            "Civil Services Examination and Opportunities Workshop\n"
     };
 
     public seminars()
@@ -44,31 +38,22 @@ public class seminars extends android.app.Fragment {
                 Intent description=new Intent(vg.getContext(),seminarActivity.class);
 
                if(i==0) {
-                   b.putString("key","Description of seminar dsklfndsklfnlksdnflkdsnflkdsnfldsknfl\nmsklfndsmlfndslf");
+                   b.putString("key","Civil Services Examination and Opportunities Workshop\n" +
+                           "An opportunity to learn about one of the most competitive and sought after exam in India.\n" +
+                           "\n" +
+                           "Conducted by Industry Experts, get first hand experience with a platform to clear all your doubts and broaden your horizons.\n" +
+                           "\n" +
+                           "Tips and guidance will be given about how to crack exams like UPSC, MPSC etc and shape your career.\n" +
+                           "\n" +
+                           "Registration Fee: Free Workshop\n" +
+                           "\n" +
+                           "Venue - Computer Seminar Hall, PICT, Pune\n" +
+                           "\n" +
+                           "Workshop Date- Thursday, 22nd February, 2018\n" +
+                           "\n" +
+                           "Workshop Timing- 4:00 PM to 5:30 PM");
                    b.putInt("imgid", R.drawable.img1);
                }
-
-               if(i==1) {
-                    b.putString("key","Description of seminar 2 ndsaklfndslkfndlkfndslknflsdfnlsn\nmsklaldnslkfnsdlkf ");
-                    b.putInt("imgid", R.drawable.img2);
-                }
-                if(i==2) {
-                    b.putString("key","Description of seminar dsklfndsklfnlksdnflkdsnflkdsnfldsknfl\nmsklfndsmlfndslf");
-                    b.putInt("imgid", R.drawable.img1);
-                }
-                if(i==3) {
-                    b.putString("key","Description of seminar 2 ndsaklfndslkfndlkfndslknflsdfnlsn\nmsklaldnslkfnsdlkf ");
-                    b.putInt("imgid", R.drawable.img2);
-                }
-                if(i==4) {
-                    b.putString("key","Description of seminar dsklfndsklfnlksdnflkdsnflkdsnfldsknfl\nmsklfndsmlfndslf");
-                    b.putInt("imgid", R.drawable.img1);
-                }
-                if(i==5) {
-                    b.putString("key","Description of seminar 2 ndsaklfndslkfndlkfndslknflsdfnlsn\nmsklaldnslkfnsdlkf ");
-                    b.putInt("imgid", R.drawable.img2);
-                }
-
                 description.putExtras(b);
                 startActivity(description);
 

@@ -8,14 +8,14 @@ import android.widget.ImageView;
 public class SplashScreen extends Activity {
 
     // Splash screen timer
-    private static int SPLASH_TIME_OUT = 2000;
+    private static int SPLASH_TIME_OUT = 900;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         ImageView imageView=findViewById(R.id.imgLogo);
-        imageView.animate().alpha(1).setDuration(1500);
+        imageView.animate().alpha(1).setDuration(900);
         new Handler().postDelayed(new Runnable() {
 
             /*

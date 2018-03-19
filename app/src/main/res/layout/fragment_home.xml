@@ -28,7 +28,7 @@
             android:layout_marginEnd="8dp"
             android:contentDescription="CREDENZ TECH DAYS"
 
-            android:src="@drawable/ctd1"
+            android:src="@drawable/ctdlogowhite"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -46,56 +46,39 @@
             android:text="CTD" />
         -->
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="SWIPE>>>"
-            android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
-            android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/awesome_btn" />
-
         <com.synnapps.carouselview.CarouselView
             android:id="@+id/carouselView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="235dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             app:fillColor="#FFFFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/awesome_btn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3"
             app:pageColor="#00000000"
             app:radius="6dp"
             app:slideInterval="3000"
             app:strokeColor="#FF777777"
-            app:strokeWidth="1dp" />
+            app:strokeWidth="1dp"
+            tools:layout_editor_absoluteX="8dp" />
 
         <Button
             android:id="@+id/awesome_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="52dp"
+            android:layout_marginBottom="36dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@android:color/holo_blue_dark"
             android:text="Know About The Event"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textColor="#ffffff"
-            android:textSize="15sp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </android.support.constraint.ConstraintLayout>

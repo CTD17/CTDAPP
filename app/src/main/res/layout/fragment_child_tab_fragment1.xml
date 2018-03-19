@@ -7,11 +7,10 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
+        android:text="PISB was established in the year 1998 with the aim of inculcating the sense of technical awareness amongst its student members. PISB endeavers to escalate the knowledge and trends in the diverse field of technologies amongst its members. PISB upholds two major events every year, Credenz and Credenz Tech Dayz with the first one being conducted in the even semester and the second one in the odd semester. PISB is also marked by its Women in Engineering(WIE) chapter, an initiative for impowerment of women in the technical domain."
         android:layout_height="match_parent"
-        android:text="@string/ctd_info"
         android:textColor="@color/default_circle_indicator_fill_color"
         android:layout_margin="6dp"
-        android:textSize="20dp"
-        android:textStyle="bold"/>
+        android:textSize="20sp"/>
 
 </FrameLayout>

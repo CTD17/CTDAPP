@@ -42,10 +42,10 @@ public class EventsDescription extends AppCompatActivity {
                         "Bring out the Sherlock in you to crack a series of strategic clues and get ready to plunge into the world of deductions.\n" +
                         "Explore Google, decode the hints and follow the trail to Decrypt the Encrypted!\n" +
                         "So go on, log in and unfold the mysteries in these 36 hours long run.\n" +
-                        "The game is on!\n" +
-                        "NTH goes live on: 17th February 2018\n" +
-                        "Timings: 9:00pm IST\n" +
-                        "Visit: https://nth.credenz.info");
+                        "\nThe game is on!\n" +
+                        "\nNTH goes live on: 17th February 2018\n" +
+                        "\nTimings: 9:00pm IST\n" +
+                        "\nVisit: https://nth.credenz.info");
                 break;
             case 2:
                 scrollView.fullScroll(ScrollView.FOCUS_UP);
@@ -57,10 +57,10 @@ public class EventsDescription extends AppCompatActivity {
                         "Here's an opportunity to divulge into the intricacies of competitive coding. PISB brings you NCC (National Computing Contest).\n" +
                         "NCC is a platform where you can not only test your logical acuity but also explore your coding skills.\n" +
                         "So, get ready to brainstorm your knowledge of C and C++ to code, compile and resolve.\n" +
-                        "Date: Tuesday, 27th Feburary, 2018\n" +
+                        "\nDate: Tuesday, 27th Feburary, 2018\n" +
                         "Venue: Pune Institute of Computer Technology (PICT), Pune.\n" +
-                        "Registration Fee : 100Rs (Team of 2 max)\n" +
-                        "For further details, contact\n" +
+                        "\nRegistration Fee : 100Rs (Team of 2 max)\n" +
+                        "\nFor further details, contact\n" +
                         "Ayush Gupta : 9028600226\n" +
                         "Amey Deshpande : 7588758032");
                 break;
@@ -82,11 +82,11 @@ public class EventsDescription extends AppCompatActivity {
                 imageView.setBackgroundResource(R.drawable.highlight1);
                 textView.setText("Hello Everyone! PISB presents you the very first event of CTD'18 Enigma-\n The Battle For Logical Supremacy*\n" +
                         "Do you have what it takes to face the mind boggling questions which will push your logical reasoning to its limit?! Then don't miss on this amazing opportunity.\n" +
-                        "Date : Tuesday, 16th Jan 2018!\n" +
-                        "Fee : Rs. 30/Team(of Two)\n" +
-                        "Time : 4:00 PM First Shift\n" +
+                        "\nDate : Tuesday, 16th Jan 2018!\n" +
+                        "\nFee : Rs. 30/Team(of Two)\n" +
+                        "\nTime : 4:00 PM First Shift\n" +
                         "8:00 PM Second Shift\n" +
-                        "Contact and Paytm\n" +
+                        "\nContact and Paytm\n" +
                         "Aman Goenka : 8983723300");
                 break;
             case 5:
@@ -98,11 +98,11 @@ public class EventsDescription extends AppCompatActivity {
                 textView.setText("Rack your brains and put your mind to the test as you participate in InQuizitive, a quiz held jointly by PISB and PICT Quiz Club.\n" +
                         "Join us for a session of brain teasers that are worded to amuse and amaze.\n" +
                         "Get ready to put your thinking caps and exercise those grey cells!\n" +
-                        "Time: 4:00 pm\n" +
-                        "Rack your brains and put your mind to the test as you participate in InQuizitive, a quiz held jointly by PISB and PICT Quiz Club.\n" +
-                        "Join us for a session of brain teasers that are worded to amuse and amaze.\n" +
-                        "Get ready to put your thinking caps and exercise those grey cells!\n" +
-                        "Date will be announced soon! ");
+                        "\nTime: 4:00 pm\n" +
+                        "\nRack your brains and put your mind to the test as you participate in InQuizitive, a quiz held jointly by PISB and PICT Quiz Club.\n" +
+                        "\nJoin us for a session of brain teasers that are worded to amuse and amaze.\n" +
+                        "\nGet ready to put your thinking caps and exercise those grey cells!\n" +
+                        "\nDate will be announced soon! ");
                 break;
             case 6:
                 scrollView.fullScroll(ScrollView.FOCUS_UP);
@@ -112,10 +112,10 @@ public class EventsDescription extends AppCompatActivity {
                 imageView.setBackgroundResource(R.drawable.highlight1);
                 textView.setText("Do you have a knack to solve riddles?\n" +
                         "PISB brings you Unravel - The On Campus Treasure Hunt!\n" +
-                        "If you ever thought of PICT campus being small, get ready to change your thoughts.\n" +
-                        "Follow the trail to reach the ultimate treasure! The fun and excitement in the competition increases as you solve the puzzles and move to the next level. Its all about speed and logic.\n" +
-                        "Pack your binoculars, wear your running shoes and let your team's flag shine at the top.\n" +
-                        "Date will be announced soon! ");
+                        "\nIf you ever thought of PICT campus being small, get ready to change your thoughts.\n" +
+                        "\nFollow the trail to reach the ultimate treasure! The fun and excitement in the competition increases as you solve the puzzles and move to the next level. Its all about speed and logic.\n" +
+                        "\nPack your binoculars, wear your running shoes and let your team's flag shine at the top.\n" +
+                        "\nDate will be announced soon! ");
                 break;
             default:
                 break;

@@ -156,9 +156,9 @@ public class MainActivity extends AppCompatActivity
 
 
             manager.popBackStack();
-            manager.beginTransaction().addToBackStack("fragment_sig");
-            //Toast.makeText(this,"Job Shedular Working ...", Toast.LENGTH_SHORT).show();
-            manager.beginTransaction().replace(R.id.frame, new SigFragment(),"fragment_sig").commit();
+
+            manager.beginTransaction().addToBackStack("Home");
+            manager.beginTransaction().replace(R.id.frame, new SigFragment()).commit();
 
 
         } else if (id == R.id.nav_seminar) {
