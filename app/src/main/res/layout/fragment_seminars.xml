@@ -16,8 +16,6 @@
         android:id="@+id/semlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/default_circle_indicator_page_color"
-        android:backgroundTint="@color/colorPrimary"
         android:scrollIndicators="right" />
 
 

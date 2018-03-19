@@ -38,7 +38,7 @@ public class seminars extends android.app.Fragment {
                 Intent description=new Intent(vg.getContext(),seminarActivity.class);
 
                if(i==0) {
-                   b.putString("key","Civil Services Examination and Opportunities Workshop\n" +
+                   b.putString("key","\nCivil Services Examination and Opportunities Workshop\n" +
                            "An opportunity to learn about one of the most competitive and sought after exam in India.\n" +
                            "\n" +
                            "Conducted by Industry Experts, get first hand experience with a platform to clear all your doubts and broaden your horizons.\n" +

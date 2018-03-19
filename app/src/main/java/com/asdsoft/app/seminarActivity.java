@@ -11,9 +11,17 @@ public class seminarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seminar);
-        String s="Workshop on Civil Services";
+
+        Bundle b;
+
+        b=getIntent().getExtras();
+
+        String s=b.getString("key");
+        int i=b.getInt("imgid");
+
         TextView tv;
         tv=(TextView)findViewById(R.id.tv);
+
         tv.setText(s);
     }
 }
