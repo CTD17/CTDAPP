@@ -41,6 +41,8 @@
             android:textAlignment="center"
             android:text="@string/test"
             android:id="@+id/num1"
+            android:autoLink="phone|all"
+            android:linksClickable="true"
             android:textIsSelectable="true"
             />
 
@@ -73,7 +75,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="9876543210"
+            android:text="+919876543210"
+            android:autoLink="phone|all"
+            android:linksClickable="true"
             />
 
 
