@@ -109,7 +109,11 @@ public class EventsDescription extends AppCompatActivity {
                         "\nIf you ever thought of PICT campus being small, get ready to change your thoughts.\n" +
                         "\nFollow the trail to reach the ultimate treasure! The fun and excitement in the competition increases as you solve the puzzles and move to the next level. Its all about speed and logic.\n" +
                         "\nPack your binoculars, wear your running shoes and let your team's flag shine at the top.\n" +
-                        "\nDate will be announced soon! ");
+                        "\nDate : Wednesday, 21th March 2018" +
+                        "\nTime : 4:30 PM to 8:00 PM \n" +
+                        "\nContact \n" +
+                        "Mihir Baheti : +91 7057592979\n" +
+                        "Ashutosh Danwe : +91 9011459129\n");
                 break;
             default:
                 break;

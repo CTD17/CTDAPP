@@ -112,11 +112,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent i = new Intent(this,SettingsActivity.class);
-            startActivity(i);
-            return true;
-        }
+//        if (id == R.id.act) {
+////            Intent i = new Intent(this,SettingsActivity.class);
+////            startActivity(i);
+//            return true;
+//        }
 
         if (id == R.id.action_feedback) {
             Intent i = new Intent(this,feddback.class);
@@ -150,7 +150,6 @@ public class MainActivity extends AppCompatActivity
 
 
             manager.popBackStack();
-
             manager.beginTransaction().addToBackStack("Home");
             manager.beginTransaction().replace(R.id.frame, new SigFragment()).commit();
 
@@ -162,7 +161,9 @@ public class MainActivity extends AppCompatActivity
             manager.beginTransaction().replace(R.id.frame, new seminars(),"fragment_seminars").commit();
 
         } else if (id == R.id.nav_share) {
-            manager.popBackStack();
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.getMenu().getItem(4).setChecked(true);
+                manager.popBackStack();
             manager.beginTransaction().addToBackStack("fragment_contact");
             manager.beginTransaction().replace(R.id.frame, new ContactUs(),"fragment_contact").commit();
 
