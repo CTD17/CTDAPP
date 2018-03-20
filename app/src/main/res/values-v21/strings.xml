@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="feedback" />
+    <string name="feedback" >If you find a bug int his app or have more ideas for improvement, do not hesitate to contact us. We appreciate your support. Feel free to share your thoughts. Your suggestions are valuable to us </string>
 </resources>

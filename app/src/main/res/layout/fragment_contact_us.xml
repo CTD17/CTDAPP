@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.asdsoft.app.ContactUs">
+    tools:context="com.pisb.ctd.ContactUs">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rajat Palliwal"
+                android:text="Rajat Paliwal"
                 android:textAlignment="center"
                 android:textColor="@color/vpi__background_holo_dark"
                 android:textSize="20sp" />

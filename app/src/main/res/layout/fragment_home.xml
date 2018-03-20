@@ -4,7 +4,7 @@
     android:id="@+id/homeframe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.asdsoft.app.seminarActivity">
+    tools:context="com.pisb.ctd.seminarActivity">
 
 
     <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -35,7 +35,7 @@
 
 
         <!--  <Button
-            android:id="@+id/ctd"
+            android:id="@com/ctd"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_below="@id/carouselView"
