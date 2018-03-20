@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
             Intent share = new Intent("android.intent.action.SEND");
             share.setType("text/plain");
-            share.putExtra("android.intent.extra.TEXT", getString(R.string.app_share) + "https://play.google.com/store/apps/details?id=com.pisb.com");
+            share.putExtra("android.intent.extra.TEXT", getString(R.string.app_share) + "https://play.google.com/store/apps/details?id=com.pisb.ctd");
             startActivity(Intent.createChooser(share, "Share via"));
 
         }
