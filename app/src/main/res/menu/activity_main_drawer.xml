@@ -21,20 +21,21 @@
             android:icon="@drawable/seminars"
             android:title="Seminar" />
 
-        <item android:title="Communicate" />
+        <item android:title="Communicate" >
+
+            <menu>
+
+                <item
+                    android:id="@+id/nav_send"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="Share" />
+            </menu>
+
+        </item>
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/contactus"
             android:title="Contact Us" />
-
-
-        <menu>
-
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Share" />
-        </menu>
 
 
 

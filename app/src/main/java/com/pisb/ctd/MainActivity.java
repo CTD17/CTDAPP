@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-            navigationView.getMenu().getItem(4).setChecked(true);
+            navigationView.getMenu().getItem(5).setChecked(true);
                 manager.popBackStack();
             manager.beginTransaction().addToBackStack("fragment_contact");
             manager.beginTransaction().replace(R.id.frame, new ContactUs(),"fragment_contact").commit();
@@ -172,7 +172,6 @@ public class MainActivity extends AppCompatActivity
             share.setType("text/plain");
             share.putExtra("android.intent.extra.TEXT", getString(R.string.app_share) + "https://play.google.com/store/apps/details?id=com.pisb.ctd");
             startActivity(Intent.createChooser(share, "Share via"));
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
