@@ -39,18 +39,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rajat Shah"
+                android:text="Rajat Palliwal"
                 android:textAlignment="center"
                 android:textColor="@color/vpi__background_holo_dark"
                 android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:text="email"
-                android:textAlignment="center"
-                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/num1"
@@ -81,13 +73,6 @@
                 android:textAlignment="center"
                 android:textColor="@color/vpi__background_holo_dark"
                 android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="email"
-                android:textAlignment="center"
-                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
