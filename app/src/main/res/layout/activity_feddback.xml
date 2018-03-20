@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="20dp"
-                android:text="@string/feedback"
+                android:text="If you find a bug in this app or have more ideas for improvement, do not hesitate to contact us. We appreciate your support. Feel free to share your thoughts. Your suggestions are valuable to us"
                 android:textAlignment="gravity"
                 android:textColor="#ffffff"
                 android:textSize="18dp" />
@@ -111,7 +111,7 @@
                         android:layout_weight="1.0"
                         android:autoLink="phone|all"
                         android:linksClickable="true"
-                        android:text="+91 7020292287"
+                        android:text="+91 7588289473"
                         android:textColorLink="#ffbb33" />
 
                     <TextView

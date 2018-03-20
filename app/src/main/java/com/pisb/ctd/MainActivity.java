@@ -50,15 +50,15 @@ public class MainActivity extends AppCompatActivity
                navigationView.getMenu().performIdentifierAction(R.id.nav_home, 0);
             navigationView.getMenu().getItem(0).setChecked(true);
         }
-        try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-                boolean nnotifypref = settings.getBoolean("notifications_new_message", true);
-                jshedular(nnotifypref);
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//                SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+//                boolean nnotifypref = settings.getBoolean("notifications_new_message", true);
+////                jshedular(nnotifypref);
+//            }
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
         navigationView.setNavigationItemSelectedListener(this);
     }

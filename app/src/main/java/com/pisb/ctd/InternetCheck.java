@@ -22,7 +22,7 @@ public class InternetCheck extends BroadcastReceiver {
                     context.getSystemService(Context.CONNECTIVITY_SERVICE);
            // Toast.makeText(context, "Checking1", Toast.LENGTH_SHORT).show();
             NetworkInfo ni = cm.getActiveNetworkInfo();
-            i = new Intent(context, Bservice.class);
+          //  i = new Intent(context, Bservice.class);
             //context.startService(i);
             if (ni != null) {
                 //
@@ -31,16 +31,16 @@ public class InternetCheck extends BroadcastReceiver {
                 editor.putInt("service", 1);
                 editor.commit();
 
-                context.startService(i);
+               // context.startService(i);
             } else {
 
                 if (settings.getInt("service", 0) == 1) {
-                    context.stopService(i);
+              //      context.stopService(i);
                     SharedPreferences.Editor editor = settings.edit();
                     editor.putInt("service", 0);
                     editor.commit();
                 }
-                context.stopService(i);
+            //    context.stopService(i);
             }
         }
     }

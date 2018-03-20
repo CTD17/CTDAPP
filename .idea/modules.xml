@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CTDAPP.iml" filepath="$PROJECT_DIR$/CTDAPP.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/CTDAPP.iml" filepath="$PROJECT_DIR$/.idea/CTDAPP.iml" />
       <module fileurl="file://H:\AndroidApp\CTDAPP\CTDAPP2.iml" filepath="H:\AndroidApp\CTDAPP\CTDAPP2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
