@@ -90,10 +90,6 @@ public class EventsDescription extends AppCompatActivity {
                 imageView.getParent().requestChildFocus(imageView,imageView);
                 imageView.setBackgroundResource(R.drawable.highlight1);
                 textView.setText("Rack your brains and put your mind to the test as you participate in InQuizitive, a quiz held jointly by PISB and PICT Quiz Club.\n" +
-                        "Join us for a session of brain teasers that are worded to amuse and amaze.\n" +
-                        "Get ready to put your thinking caps and exercise those grey cells!\n" +
-                        "\nTime: 4:00 pm\n" +
-                        "\nRack your brains and put your mind to the test as you participate in InQuizitive, a quiz held jointly by PISB and PICT Quiz Club.\n" +
                         "\nJoin us for a session of brain teasers that are worded to amuse and amaze.\n" +
                         "\nGet ready to put your thinking caps and exercise those grey cells!\n" +
                         "\nDate will be announced soon! ");
