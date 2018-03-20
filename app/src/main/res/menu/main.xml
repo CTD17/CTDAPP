@@ -7,8 +7,8 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_contactus"
+        android:id="@+id/action_feedback"
         android:orderInCategory="100"
-        android:title="@string/action_contactus"
+        android:title="feedback"
         app:showAsAction="never" />
 </menu>

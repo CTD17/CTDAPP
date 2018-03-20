@@ -94,9 +94,12 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         ContactUs contact = (ContactUs) getFragmentManager().findFragmentByTag("fragment_contact");
         if ((event != null && event.isVisible())   || ((sig != null && sig.isVisible()) || ((seminar != null && seminar.isVisible()) || ((contact != null && contact.isVisible()) || ((seminar != null && seminar.isVisible()) || ((tabFragment != null && tabFragment.isVisible()))))))) {
             getFragmentManager().beginTransaction().replace(R.id.frame, new Home()).commit();
+            navigationView.getMenu().performIdentifierAction(R.id.nav_home, 0);
+            navigationView.getMenu().getItem(0).setChecked(true);
         }
         else if ((home == null || !home.isVisible())){
             super.onBackPressed();
@@ -126,6 +129,12 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent i = new Intent(this,SettingsActivity.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.action_feedback) {
+            Intent i = new Intent(this,feddback.class);
             startActivity(i);
             return true;
         }
